@@ -1,0 +1,19 @@
+{
+  "name": "mvn-mirror",
+  "version": "0.1.1",
+  "description": "Configure maven mirror property in settings.xml",
+  "main": "tasks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "10.12.9",
+    "@types/q": "^1.5.4",
+    "azure-pipelines-task-lib": "^2.12.0",
+    "fs-extra": "^0.30.0",
+    "strip-bom": "^3.0.0",
+    "xml2js": "^0.4.16"
+  }
+}

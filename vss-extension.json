@@ -1,0 +1,64 @@
+{
+  "manifestVersion": 1,
+  "id": "azure-devops-mvn-mirror",
+  "version": "0.1.1",
+  "name": "Configure Maven Miror",
+  "publisher": "kharkevich",
+  "public": true,
+  "description": "Configure Maven Miror in settings.xml step",
+  "targets": [
+      {
+          "id": "Microsoft.VisualStudio.Services.Cloud"
+      }
+  ],
+  "icons": {
+      "default": "images/icon.png"        
+  },
+  "categories": [
+      "Azure Pipelines"
+  ],
+  "tags": ["azure", "deployment", "maven", "mvn"],
+  "scopes": ["vso.release"],
+  "content": {
+    "details": {
+        "path": "README.md"
+    },
+    "license": {
+        "path": "LICENSE"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/kharkevich/azure-pipelines-maven-mirror"
+  },
+  "contributions": [
+    {
+        "id": "mvn-mirror",
+        "type": "ms.vss-distributed-task.task",
+        "targets": [
+            "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+            "name": "mvn-mirror"
+        }
+    }
+  ],
+  "files": [
+    {
+      "path": "mvn-mirror/v0/dist",
+      "packagePath": "mvn-mirror/v0/dist"
+    },
+    {
+      "path": "mvn-mirror/v0/node_modules",
+      "packagePath": "mvn-mirror/v0/node_modules"
+    },
+    {
+      "path": "mvn-mirror/v0/icon.png",
+      "packagePath": "mvn-mirror/v0/icon.png"
+    },
+    {
+      "path": "mvn-mirror/v0/task.json",
+      "packagePath": "mvn-mirror/v0/task.json"
+    }
+  ]
+}
