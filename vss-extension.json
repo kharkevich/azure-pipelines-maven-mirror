@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "azure-devops-mvn-mirror",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "Configure Maven Miror",
   "publisher": "kharkevich",
   "public": true,

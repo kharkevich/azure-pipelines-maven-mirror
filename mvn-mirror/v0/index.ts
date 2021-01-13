@@ -4,7 +4,7 @@ import * as path from 'path';
 
 const M2FolderName: string = ".m2";
 const SettingsXmlName: string = "settings.xml";
-const backupSettingsXmlName: string = "_settings.xml";
+const backupSettingsXmlName: string = "_settings_bak.xml";
 
 // tl.setResourcePath(path.join(__dirname, 'task.json'));
 
