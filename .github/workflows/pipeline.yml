@@ -7,9 +7,7 @@ on:
 
 jobs:
   build-deploy:
-    # Name the Job
     name: Build and Deploy extension
-    # Set the type of machine to run on
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,8 +17,11 @@ jobs:
     - run: npm install -g tfx-cli
     - run: npm ci
       working-directory: mvn-mirror/v0
+    - run: tsc
+      working-directory: mvn-mirror/v0
     - run: tfx login -u ${URL} -t ${TOKEN}
       env:
         URL: ${{ secrets.URL }}
         TOKEN: ${{ secrets.TOKEN }}
     - run: tfx extension create --manifest-globs ./vss-extension.json
+    - run: tfx extension publish
