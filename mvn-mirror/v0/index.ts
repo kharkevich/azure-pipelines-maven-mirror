@@ -44,7 +44,7 @@ async function run(): Promise<void> {
     if (tl.exist(userSettingsXmlPath)) {
       // tl.debug(tl.loc("Info_SettingsXmlRead", userSettingsXmlPath));
       tl.debug('Adding authentication to settings file ' + userSettingsXmlPath);
-      tl.cp(userSettingsXmlPath, backupSettingsXmlPath);
+      tl.cp(userSettingsXmlPath, backupSettingsXmlPath, '-f');
       tl.setTaskVariable("backupUserM2SettingsFilePath", backupSettingsXmlPath);
       settingsJson = await util.readXmlFileAsJson(userSettingsXmlPath);
     }
