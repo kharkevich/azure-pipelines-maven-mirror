@@ -19,7 +19,8 @@ jobs:
       working-directory: mvn-mirror/v0
     - run: tsc
       working-directory: mvn-mirror/v0
-    - run: tfx extension create --manifest-globs ./vss-extension.json
-    - run: tfx extension publish --token ${TOKEN}
+    - run: tfx extension create
+    - run: tfx extension publish --token ${TOKEN} --service-url ${URL}
       env:
+        URL: ${{ secrets.URL }}
         TOKEN: ${{ secrets.TOKEN }}
