@@ -20,4 +20,8 @@ jobs:
     - run: cd azure-pipelines-maven-mirror/mvn-mirror/v0
     - run: npm ci
     - run: cd ${GITHUB_WORKSPACE}
+    - run: tfx login -u ${{ URL }} -t ${{ TOKEN }}
+      env:
+        URL: ${{ secrets.URL }}
+        TOKEN: ${{ secrets.TOKEN }}
     - run: tfx extension create --manifest-globs ./vss-extension.json
