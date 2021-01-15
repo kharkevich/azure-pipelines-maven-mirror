@@ -3,7 +3,7 @@ name: build and upload extension
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [master]
 
 jobs:
   build-deploy:
