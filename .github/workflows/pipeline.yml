@@ -17,9 +17,8 @@ jobs:
       with:
         node-version: '15'
     - run: npm install -g tfx-cli
-    - run: cd mvn-mirror/v0
     - run: npm ci
-    - run: cd ${GITHUB_WORKSPACE}
+      working-directory: mvn-mirror/v0
     - run: tfx login -u ${URL} -t ${TOKEN}
       env:
         URL: ${{ secrets.URL }}
