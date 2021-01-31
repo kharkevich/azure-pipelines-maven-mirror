@@ -1,11 +1,11 @@
 {
   "manifestVersion": 1,
   "id": "azure-devops-mvn-mirror",
-  "version": "0.1.4",
-  "name": "Configure Maven Miror",
+  "version": "0.1.5",
+  "name": "Configure Maven Mirror",
   "publisher": "kharkevich",
   "public": true,
-  "description": "Configure Maven Miror in settings.xml step",
+  "description": "Configure Maven Mirror in settings.xml step",
   "targets": [
       {
           "id": "Microsoft.VisualStudio.Services.Cloud"
