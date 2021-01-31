@@ -19,6 +19,7 @@ steps:
 ```
 
 Via web interface:
+
 ![Maven Mirror configuration](./media/settings.png)  
 
 See http://maven.apache.org/guides/mini/guide-mirror-settings.html for more details.
