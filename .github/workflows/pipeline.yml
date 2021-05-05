@@ -6,6 +6,15 @@ on:
     branches: [master]
 
 jobs:
+  build:
+    name: Spectral
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install
+        run: curl -L "https://get.spectralops.io/latest/x/sh?dsn=$SPECTRAL_DSN" | sh
+      - name: Scan
+        run: $HOME/.spectral/spectral scan --ok
   build-deploy:
     name: Build and Deploy extension
     runs-on: ubuntu-latest
