@@ -1,0 +1,19 @@
+---
+name: validate pull request
+on:
+  pull_request:
+    types: ['opened', 'synchronize']
+jobs:
+  validate:
+    name: "run test"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - run: yarn global add tfx-cli
+    - run: yarn install --frozen-lockfile
+      working-directory: mvn-mirror/v1
+    - run: yarn test
+      working-directory: mvn-mirror/v1
