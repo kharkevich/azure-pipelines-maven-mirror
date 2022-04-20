@@ -16,7 +16,7 @@ const mirrorsRegex = /<mirrors>/mig;
 const mirrorRegex = /<mirror>/mig;
 
 describe('Configure Maven Mirror Tests', function () {
-    this.timeout(parseInt(process.env.TASK_TEST_TIMEOUT!) || 20000);
+    this.timeout(parseInt(process.env.TASK_TEST_TIMEOUT!) || 60000);
 
     var env: NodeJS.ProcessEnv;
 
@@ -39,7 +39,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('validate input parameters', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'no-inputs.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -54,7 +54,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('validate that inputId is required', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'no-inputId.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -70,7 +70,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('validate that inputName is required', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'no-inputName.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -86,7 +86,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('validate that inputUrl is required', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'no-inputUrl.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -102,7 +102,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('validate that inputMirrorOf is required', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'no-inputMirrorOf.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -118,7 +118,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('create new .m2/settings.xml', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'add-mirror.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -149,7 +149,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('skip existing .m2/settings.xml file', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'existing-config.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
@@ -184,7 +184,7 @@ describe('Configure Maven Mirror Tests', function () {
     });
 
     it('add mirror into existing .m2/settings.xml file', function (done: Mocha.Done) {
-        this.timeout(1000);
+        this.timeout(5000);
 
         let tp = path.join(__dirname, 'existing-config.js');
         let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
