@@ -21,6 +21,7 @@
   "homepage": "https://github.com/kharkevich/azure-pipelines-maven-mirror#readme",
   "dependencies": {
     "@types/node": "^10.17.0",
+    "@types/mocha": "^5.2.7",
     "@types/q": "^1.5.2",
     "azure-pipelines-task-lib": "^3.1.7",
     "fs-extra": "^0.30.0",
@@ -28,7 +29,7 @@
     "xml2js": "^0.4.16"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
+    
     "typescript": "4.0.2"
   }
 }
