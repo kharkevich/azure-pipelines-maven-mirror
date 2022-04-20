@@ -9,7 +9,7 @@ Configure Maven Mirror in settings.xml by pipeline step
 Azure pilepines (yaml):
 ```yaml
 steps:
-- task: kharkevich.azure-devops-mvn-mirror.mvn-mirror.mvn-mirror@0
+- task: kharkevich.azure-devops-mvn-mirror.mvn-mirror.mvn-mirror@1
   displayName: 'Maven Mirror'
   inputs:
     inputId: <Azure Artifacts Repository ID>

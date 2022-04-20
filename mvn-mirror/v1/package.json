@@ -1,0 +1,34 @@
+{
+  "name": "mvn-mirror",
+  "version": "1.0.0",
+  "description": "Configure maven mirror property in settings.xml",
+  "main": "tasks.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc",
+    "copy-test-assets": "cp -r tests/assets dist/tests/assets",
+    "test": "yarn build && yarn copy-test-assets && mocha dist/tests/_suite.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kharkevich/azure-pipelines-maven-mirror.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kharkevich/azure-pipelines-maven-mirror/issues"
+  },
+  "author": "Alexander Kharkevich",
+  "license": "ISC",
+  "homepage": "https://github.com/kharkevich/azure-pipelines-maven-mirror#readme",
+  "dependencies": {
+    "@types/node": "^10.17.0",
+    "@types/q": "^1.5.2",
+    "azure-pipelines-task-lib": "^3.1.7",
+    "fs-extra": "^0.30.0",
+    "strip-bom": "^3.0.0",
+    "xml2js": "^0.4.16"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "typescript": "4.0.2"
+  }
+}
