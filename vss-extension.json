@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "azure-devops-mvn-mirror",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "name": "Configure Maven Mirror",
   "publisher": "kharkevich",
   "public": true,
@@ -45,20 +45,28 @@
   ],
   "files": [
     {
-      "path": "mvn-mirror/v0/dist",
-      "packagePath": "mvn-mirror/v0/dist"
+      "path": "mvn-mirror/v0/dist"
     },
     {
-      "path": "mvn-mirror/v0/node_modules",
-      "packagePath": "mvn-mirror/v0/node_modules"
+      "path": "mvn-mirror/v0/node_modules"
     },
     {
-      "path": "mvn-mirror/v0/icon.png",
-      "packagePath": "mvn-mirror/v0/icon.png"
+      "path": "mvn-mirror/v0/icon.png"
     },
     {
-      "path": "mvn-mirror/v0/task.json",
-      "packagePath": "mvn-mirror/v0/task.json"
+      "path": "mvn-mirror/v0/task.json"
+    },
+    {
+      "path": "mvn-mirror/v1/dist"
+    },
+    {
+      "path": "mvn-mirror/v1/node_modules"
+    },
+    {
+      "path": "mvn-mirror/v1/icon.png"
+    },
+    {
+      "path": "mvn-mirror/v1/task.json"
     }
   ]
 }

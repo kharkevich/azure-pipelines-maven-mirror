@@ -1,1 +1,4 @@
 *.vsix
+.DS_Store
+.vscode/
+.taskkey
