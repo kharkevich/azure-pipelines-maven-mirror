@@ -1,29 +1,46 @@
 ---
-name: build and upload extension
+name: build and publish ADO extension
 
 on:
   push:
     branches: [master]
 jobs:
-  build-deploy:
+  build:
     name: Build and Deploy extension
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '15'
-    - run: npm install -g tfx-cli
-    - run: npm ci
-      working-directory: mvn-mirror/v0
-    - run: tsc
-      working-directory: mvn-mirror/v0
-    - run: tfx login -u ${URL} -t ${TOKEN}
-      env:
-        URL: ${{ secrets.URL }}
-        TOKEN: ${{ secrets.TOKEN }}
-    - run: tfx extension create
-    - run: tfx extension publish --token ${TOKEN} --no-wait-validation
-      env:
-        URL: ${{ secrets.URL }}
-        TOKEN: ${{ secrets.TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn global add tfx-cli
+      - run: npm ci
+        working-directory: mvn-mirror/v0
+      - run: tsc
+        working-directory: mvn-mirror/v0
+      - run: yarn install --frozen-lockfile --production
+        working-directory: mvn-mirror/v1
+      - run: yarn build
+        working-directory: mvn-mirror/v1
+      - run: tfx extension create
+      - uses: actions/upload-artifact@v3
+        with:
+          name: extension
+          path: kharkevich\.azure-devops-mvn-mirror-.+\.vsix
+  publish:
+    name: "Publish ADO extension"
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: get extension from build task
+        uses: actions/download-artifact@v3
+        with:
+          name: extension
+      - run: tfx login -u ${URL} -t ${TOKEN}
+        env:
+          URL: ${{ secrets.URL }}
+          TOKEN: ${{ secrets.TOKEN }}
+      - run: tfx extension publish --token ${TOKEN} --no-wait-validation
+        env:
+          URL: ${{ secrets.URL }}
+          TOKEN: ${{ secrets.TOKEN }}
