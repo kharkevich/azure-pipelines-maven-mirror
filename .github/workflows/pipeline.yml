@@ -6,7 +6,7 @@ on:
     branches: [master]
 jobs:
   build:
-    name: Build ADO extension
+    name: build and publish ADO extension
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,25 +23,6 @@ jobs:
       - run: yarn build
         working-directory: mvn-mirror/v1
       - run: tfx extension create
-      - uses: actions/upload-artifact@v3
-        with:
-          name: extension
-          path: |
-            *.vsix
-            vss-extension.json
-  publish:
-    name: "Publish ADO extension"
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-      - run: yarn global add tfx-cli
-      - name: get extension from build task
-        uses: actions/download-artifact@v3
-        with:
-          name: extension
       - run: tfx login -u ${URL} -t ${TOKEN}
         env:
           URL: ${{ secrets.URL }}
