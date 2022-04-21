@@ -18,8 +18,4 @@ steps:
     inputMirrorOf: <mirrored (source) repo name> # e.g. central, or *
 ```
 
-Via web interface:
-
-![Maven Mirror configuration](./media/settings.png)  
-
 See http://maven.apache.org/guides/mini/guide-mirror-settings.html for more details.
