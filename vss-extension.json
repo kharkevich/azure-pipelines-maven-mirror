@@ -1,30 +1,53 @@
 {
   "manifestVersion": 1,
   "id": "azure-devops-mvn-mirror",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Configure Maven Mirror",
   "publisher": "kharkevich",
   "public": true,
   "description": "Configure Maven Mirror in settings.xml step",
   "targets": [
-      {
-          "id": "Microsoft.VisualStudio.Services.Cloud"
-      }
+    {
+      "id": "Microsoft.VisualStudio.Services.Cloud"
+    }
   ],
   "icons": {
-      "default": "images/icon.png"        
+    "default": "images/icon.png"
   },
-  "categories": [
-      "Azure Pipelines"
+  "screenshots": [
+    {
+      "path": "media/settings.png"
+    }
   ],
-  "tags": ["azure", "deployment", "maven", "mvn"],
-  "scopes": ["vso.release"],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "tags": [
+    "azure",
+    "deployment",
+    "maven",
+    "mvn"
+  ],
+  "scopes": [
+    "vso.release"
+  ],
   "content": {
     "details": {
-        "path": "README.md"
+      "path": "README.md"
     },
     "license": {
-        "path": "LICENSE"
+      "path": "LICENSE"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/kharkevich/azure-pipelines-maven-mirror"
+    },
+    "support": {
+      "uri": "https://github.com/kharkevich/azure-pipelines-maven-mirror/issues"
+    },
+    "privacypolicy": {
+      "uri": "https://kharkevich.org/ado-extensions/privacy-terms/"
     }
   },
   "repository": {
@@ -33,14 +56,14 @@
   },
   "contributions": [
     {
-        "id": "mvn-mirror",
-        "type": "ms.vss-distributed-task.task",
-        "targets": [
-            "ms.vss-distributed-task.tasks"
-        ],
-        "properties": {
-            "name": "mvn-mirror"
-        }
+      "id": "mvn-mirror",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "mvn-mirror"
+      }
     }
   ],
   "files": [
